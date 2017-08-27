@@ -47,26 +47,6 @@ public class FirebaseDbHelper implements DbHelper {
 		pagerRef.child(key).setValue(board);
 	}
 	
-	public static void main(String[] args)  {
-		try {
-			
-			FirebaseDbHelper db = new FirebaseDbHelper(DB_URL, new File(CERTIFICATE_FILE_URL));
-			
-			for(int i = 0; i < 10; i++) {
-				Board board = new Board();
-				board.setPostingTitle("공지사항 #" + (i+1));
-				board.setPostingContent("공지사항 #" + (i+1) + " 내용입니다.");
-				board.setRegDt(new Date().toString());
-				
-				db.add(board);
-			}
-			
-
-		}
-		catch(Throwable t) {
-			t.printStackTrace();
-		}
-	}
 	
 	
 }
